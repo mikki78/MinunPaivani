@@ -22,6 +22,7 @@ package
 			{
 				removeChild(aloitus_screen);
 				aloitus_screen = null;
+				herays();
 			}
 			addChild(aloitus_screen);
 		}
