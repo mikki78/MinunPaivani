@@ -15,14 +15,13 @@ package
 			aloitus();
 		}
 		
-		private function aloitus():void
+		private function aloitus()
 		{
-			aloitus_screen = new Aloitus;
+			aloitus_screen = new Aloitus(this);
 			if (herays_screen)
 			{
-				removeChild(aloitus_screen);
-				aloitus_screen = null;
-				herays();
+				removeChild(herays_screen);
+				herays_screen = null;
 			}
 			addChild(aloitus_screen);
 		}
@@ -30,9 +29,12 @@ package
 		public function herays()
 		{
 			herays_screen = new Herays;
-			removeChild(aloitus_screen);
-			aloitus_screen = null;
-			addChild(herays_screen);	
+			if(aloitus_screen){
+				trace("in")
+				removeChild(aloitus_screen);
+				aloitus_screen = null;
+			}
+			addChild(herays_screen)	
 		}
 	}
 }

@@ -1,8 +1,10 @@
 package screens
 {
 	import flash.display.MovieClip;
-	import flash.events.MouseEvent;
 	import flash.display.SimpleButton;
+	import flash.events.MouseEvent;
+	
+	import screens.Herays;
 	
 	public class Aloitus extends MovieClip
 	{
