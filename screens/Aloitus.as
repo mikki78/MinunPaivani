@@ -1,24 +1,20 @@
 package screens
 {
+	import flash.display.Loader;
 	import flash.display.MovieClip;
-	import flash.display.SimpleButton;
-	import flash.events.MouseEvent;
-	
-	import screens.Herays;
+	import flash.display.Stage;
+	import flash.events.Event;
+	import flash.net.URLRequest;
 	
 	public class Aloitus extends MovieClip
 	{
-		public var main_class:Peli;
-		
-		public function Aloitus(passed_class:Peli)
+		public function Aloitus(stage:Stage)
 		{
-			main_class = passed_class;
-			aloita.addEventListener(MouseEvent.CLICK, on_aloita_button_clicked);
-		}
-		
-		public function on_aloita_button_clicked(event:MouseEvent)
-		{
-			main_class.herays();
+			super();
+			var myLoader:Loader = new Loader();                     			
+			var url:URLRequest = new URLRequest("asdfghjklöä/alkuanimaatio.swf");
+			myLoader.load(url);                                    
+			stage.addChild(myLoader);
 		}
 	}
 }
