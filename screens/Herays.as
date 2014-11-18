@@ -15,6 +15,8 @@ package screens
 			var url:URLRequest = new URLRequest("asdfghjklöä/herätys.swf");
 			myLoader.load(url);                                    
 			stage.addChild(myLoader);
+			
+
 		}
 	}
 }

@@ -5,11 +5,12 @@ package
 	
 	import screens.Aloitus;
 	import screens.Herays;
+	import napit.AloitaNappi;
 	
 	public class Engine extends MovieClip
 	{
-		private var aloitus:Aloitus;
-		private var herays:Herays;
+		public var aloitus:Aloitus;
+		public var herays:Herays;
 		
 		public function Engine()
 		{
@@ -18,13 +19,20 @@ package
 		
 		public function naytaAloitus()
 		{
-			aloitus = new Aloitus(stage);
+			aloitus = new Aloitus(stage, this);			
 			addChild(aloitus);
-			
+		
 		}
 		public function naytaHerays()
 		{
-			
+			herays = new Herays(stage);
+			if(aloitus) 
+			{
+				trace("in")
+				removeChild(aloitus);
+				aloitus = null;
+			}
+			addChild(herays);
 		}
 	}
 }
