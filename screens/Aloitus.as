@@ -24,10 +24,10 @@ package screens
 			
 			mainClass = passedClass
 			aloitaNappi = new AloitaNappi();
-			aloitaNappi.x = stage.stageHeight/2;
-			aloitaNappi.y = stage.stageWidth/2; 
-			aloitaNappi.width = 220; 
-			aloitaNappi.height =20;
+			aloitaNappi.x = 327.5;
+			aloitaNappi.y = 440; 
+			aloitaNappi.width = aloitaNappi.width /2;
+			aloitaNappi.height = aloitaNappi.height /2;
 			stage.addChild(aloitaNappi);
 			
 			aloitaNappi.addEventListener(MouseEvent.CLICK, AloitaPainettu)
