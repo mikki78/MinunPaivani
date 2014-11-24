@@ -13,14 +13,16 @@ package screens
 	{
 		public var mainClass:Engine;
 		public var aloitaNappi:AloitaNappi;
+		public var aloitusLoader:Loader;
+		public var aloitusUrl:URLRequest;
 		
 		public function Aloitus(stage:Stage, passedClass:Engine)
 		{
 			super();
-			var myLoader:Loader = new Loader();                     			
-			var url:URLRequest = new URLRequest("asdfghjklöä/alkuanimaatio.swf");
-			myLoader.load(url);  
-			stage.addChild(myLoader);
+			aloitusLoader = new Loader();                     			
+			aloitusUrl = new URLRequest("asdfghjklöä/alkuanimaatio.swf");
+			aloitusLoader.load(aloitusUrl);  
+			stage.addChild(aloitusLoader);
 			
 			mainClass = passedClass
 			aloitaNappi = new AloitaNappi();
@@ -34,6 +36,7 @@ package screens
 		}
 		public function AloitaPainettu(event:MouseEvent)
 		{
+			aloitusLoader.unloadAndStop(true);
 			mainClass.naytaHerays()
 		}
 	}
