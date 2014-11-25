@@ -8,12 +8,14 @@ package
 	import screens.Aloitus;
 	import screens.EkaKaytava;
 	import screens.Herays;
+	import screens.TokaKaytava;
 	
 	public class Engine extends MovieClip
 	{
 		public var aloitus:Aloitus;
 		public var herays:Herays;
 		public var ekaKaytava:EkaKaytava;
+		public var tokaKaytava:TokaKaytava;
 		
 		public function Engine()
 		{
@@ -44,7 +46,7 @@ package
 			addChild(herays);
 			
 		}
-			public function naytaEkaKaytava()
+		public function naytaEkaKaytava()
 		{
 			ekaKaytava = new EkaKaytava(stage, this);
 			if (herays)
@@ -54,6 +56,18 @@ package
 				herays = null;
 			}
 			addChild(ekaKaytava);
+		}
+		
+		public function naytaTokaKaytava()
+		{
+			tokaKaytava = new TokaKaytava(stage, this);
+			if (ekaKaytava)
+			{
+				trace("Toka käytävä");
+				removeChild(ekaKaytava);
+				ekaKaytava = null;
+			}
+			addChild(tokaKaytava);
 		}
 	}
 }

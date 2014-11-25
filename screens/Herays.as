@@ -14,7 +14,7 @@ package screens
 		public var heraysLoader:Loader;
 		public var heraysUrl:URLRequest;
 		private var mainClass:Engine;
-		var heraysTimer:Timer;
+		public var heraysTimer:Timer;
 		
 		public function Herays(stage:Stage, passedClass:Engine)
 		{	
@@ -37,8 +37,6 @@ package screens
 			heraysTimer.removeEventListener("timer", timerHandler);
 			trace("tässä");
 			mainClass.naytaEkaKaytava()
-			
 		}
-		
 	}
 }
