@@ -34,7 +34,7 @@ package
 		}
 		public function naytaHerays()
 		{
-			herays = new Herays(stage);
+			herays = new Herays(stage, this);
 			if(aloitus) 
 			{
 				trace("Heräys")
@@ -42,12 +42,18 @@ package
 				aloitus = null;
 			}
 			addChild(herays);
-			naytaKaytava()
 			
 		}
-			public function naytaKaytava()
+			public function naytaEkaKaytava()
 		{
-			ekaKaytava = new EkaKaytava();
+			ekaKaytava = new EkaKaytava(stage, this);
+			if (herays)
+			{
+				trace("Eka käytävä");
+				removeChild(herays);
+				herays = null;
+			}
+			addChild(ekaKaytava);
 		}
 	}
 }

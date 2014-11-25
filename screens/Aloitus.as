@@ -11,7 +11,7 @@ package screens
 	
 	public class Aloitus extends MovieClip
 	{
-		public var mainClass:Engine;
+		private var mainClass:Engine;
 		public var aloitaNappi:AloitaNappi;
 		public var aloitusLoader:Loader;
 		public var aloitusUrl:URLRequest;
@@ -36,9 +36,9 @@ package screens
 		}
 		public function AloitaPainettu(event:MouseEvent)
 		{
+			trace("Aloitus");
 			aloitusLoader.unloadAndStop(true);
 			mainClass.naytaHerays()
 		}
 	}
-}
-		
+}		

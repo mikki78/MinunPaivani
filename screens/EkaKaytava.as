@@ -8,12 +8,16 @@ package screens
 	
 	public class EkaKaytava extends MovieClip
 	{
-		public function EkaKaytava()
+		public var ekaKaytavaLoader:Loader;
+		public var ekaKaytavaUrl:URLRequest;
+		
+		public function EkaKaytava(stage:Stage, passedClass:Engine)
 		{
-			var myLoader:Loader = new Loader();                     			
-			var url:URLRequest = new URLRequest("asdfghjklöä/ekaKaytava.swf");
-			myLoader.load(url);                                    
-			stage.addChild(myLoader);
+			ekaKaytavaLoader = new Loader();                     			
+			ekaKaytavaUrl = new URLRequest("asdfghjklöä/ekaKaytava.swf");
+			
+			ekaKaytavaLoader.load(ekaKaytavaUrl);
+			stage.addChild(ekaKaytavaLoader);
 		}
 	}
 }
