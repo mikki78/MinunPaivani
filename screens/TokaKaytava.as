@@ -59,6 +59,8 @@ package screens
 		public function PyykkiNappiPainettu(event:MouseEvent)
 		{
 			trace("Pyykki nappi painettu");
+			tokaKaytavaLoader.unloadAndStop(true);
+			mainClass.naytaPyykkiHuone()
 		}
 	}
 }

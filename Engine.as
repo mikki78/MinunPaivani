@@ -1,5 +1,8 @@
 package
 {
+	import animaatiot.Keittio;
+	import animaatiot.PyykkiHuone;
+	
 	import flash.display.MovieClip;
 	import flash.display.Stage;
 	
@@ -16,6 +19,8 @@ package
 		public var herays:Herays;
 		public var ekaKaytava:EkaKaytava;
 		public var tokaKaytava:TokaKaytava;
+		public var keittio:Keittio;
+		public var pyykkiHuone:PyykkiHuone;
 		
 		public function Engine()
 		{
@@ -68,6 +73,30 @@ package
 				ekaKaytava = null;
 			}
 			addChild(tokaKaytava);
+		}
+		
+		public function naytaKeittio()
+		{
+			keittio = new Keittio(stage, this);
+			if(ekaKaytava)
+			{
+				trace("Keittiö");
+				removeChild(ekaKaytava);
+				ekaKaytava = null;
+			}
+			addChild(keittio);
+		}
+		
+		public function naytaPyykkiHuone()
+		{
+			pyykkiHuone = new PyykkiHuone(stage, this);
+			if(tokaKaytava)
+			{
+				trace("Pyykkihuone");
+				removeChild(tokaKaytava);
+				tokaKaytava = null;
+			}
+			addChild(pyykkiHuone);
 		}
 	}
 }

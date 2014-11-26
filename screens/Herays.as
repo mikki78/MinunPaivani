@@ -25,8 +25,9 @@ package screens
 			
 			heraysLoader.load(heraysUrl);
 			stage.addChild(heraysLoader);
+			
 			heraysTimer.addEventListener("timer", timerHandler);
-			trace("timerstart");
+			trace("Timerstart");
 			heraysTimer.start();
 		}
 		
@@ -35,7 +36,6 @@ package screens
 			trace("Ajastin");
 			heraysLoader.unloadAndStop(true);
 			heraysTimer.removeEventListener("timer", timerHandler);
-			trace("tässä");
 			mainClass.naytaEkaKaytava()
 		}
 	}
