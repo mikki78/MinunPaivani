@@ -10,6 +10,7 @@ package screens
 	
 	import napit.OikeaNuoliNappi;
 	import napit.PyykkiNappi;
+	import napit.SiivousNappi;
 	
 	public class TokaKaytava extends MovieClip
 	{
@@ -17,6 +18,7 @@ package screens
 		public var tokaKaytavaUrl:URLRequest;
 		public var oikeaNuoliNappi:OikeaNuoliNappi;
 		public var pyykkiNappi:PyykkiNappi;
+		public var siivousNappi:SiivousNappi;
 		private var mainClass:Engine;
 		
 		public function TokaKaytava(stage:Stage, passedClass:Engine)
@@ -47,6 +49,15 @@ package screens
 			stage.addChild(pyykkiNappi);
 			
 			pyykkiNappi.addEventListener(MouseEvent.CLICK, PyykkiNappiPainettu)
+				
+			siivousNappi = new SiivousNappi();
+			siivousNappi.x = 138;
+			siivousNappi.y = 190; 
+			siivousNappi.width = siivousNappi.width /6.5;
+			siivousNappi.height = siivousNappi.height /6.5;
+			stage.addChild(siivousNappi);
+			
+			siivousNappi.addEventListener(MouseEvent.CLICK, SiivousNappiPainettu)
 		}
 		
 		public function OikeaNuoliPainettu(event:MouseEvent)
@@ -61,6 +72,11 @@ package screens
 			trace("Pyykki nappi painettu");
 			tokaKaytavaLoader.unloadAndStop(true);
 			mainClass.naytaPyykkiHuone()
+		}
+		
+		public function SiivousNappiPainettu(event:MouseEvent)
+		{
+			trace("Siivous nappi painettu");
 		}
 	}
 }
