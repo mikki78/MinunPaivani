@@ -7,6 +7,7 @@ package screens
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.net.URLRequest;
+	
 	import napit.AloitaNappi;
 	
 	public class Aloitus extends MovieClip
@@ -34,10 +35,12 @@ package screens
 			
 			aloitaNappi.addEventListener(MouseEvent.CLICK, AloitaPainettu)
 		}
+		
 		public function AloitaPainettu(event:MouseEvent)
 		{
 			trace("Aloitus");
 			aloitusLoader.unloadAndStop(true);
+			stage.removeChild(aloitaNappi);
 			mainClass.naytaHerays()
 		}
 	}

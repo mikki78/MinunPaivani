@@ -74,6 +74,10 @@ package screens
 		{
 			trace("Vasen nuoli painettu");
 			ekaKaytavaLoader.unloadAndStop(true);
+			stage.removeChild(vasenNuoliNappi);
+			stage.removeChild(keittioNappi);
+			stage.removeChild(ulkoOviNappi);
+			stage.removeChild(vessanOviNappi);
 			mainClass.naytaTokaKaytava()
 		}
 		
@@ -81,6 +85,10 @@ package screens
 		{
 			trace("Keittiö painettu");
 			ekaKaytavaLoader.unloadAndStop(true);
+			stage.removeChild(vasenNuoliNappi);
+			stage.removeChild(keittioNappi);
+			stage.removeChild(ulkoOviNappi);
+			stage.removeChild(vessanOviNappi);
 			mainClass.naytaKeittio()
 		}
 		
@@ -92,6 +100,12 @@ package screens
 		public function VessanOviPainettu(event:MouseEvent)
 		{
 			trace("Vessan ovi painettu");
+			ekaKaytavaLoader.unloadAndStop(true);
+			stage.removeChild(vasenNuoliNappi);
+			stage.removeChild(keittioNappi);
+			stage.removeChild(ulkoOviNappi);
+			stage.removeChild(vessanOviNappi);
+			mainClass.naytaKylpyHuone()
 		}
 	}
 }

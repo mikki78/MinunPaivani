@@ -11,8 +11,9 @@ package animaatiot
 	{
 		public var pyykkiHuoneLoader:Loader;
 		public var pyykkiHuoneUrl:URLRequest;
-		private var mainClass:Engine;
 		public var pyykkiHuoneTimer:Timer;
+		
+		private var mainClass:Engine;
 		
 		public function PyykkiHuone(stage:Stage, passedClass:Engine)
 		{

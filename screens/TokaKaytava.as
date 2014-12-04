@@ -64,6 +64,9 @@ package screens
 		{
 			trace("Oikea nuoli painettu");
 			tokaKaytavaLoader.unloadAndStop(true);
+			stage.removeChild(oikeaNuoliNappi);
+			stage.removeChild(pyykkiNappi);
+			stage.removeChild(siivousNappi);
 			mainClass.naytaEkaKaytava()
 		}
 		
@@ -71,12 +74,20 @@ package screens
 		{
 			trace("Pyykki nappi painettu");
 			tokaKaytavaLoader.unloadAndStop(true);
+			stage.removeChild(oikeaNuoliNappi);
+			stage.removeChild(pyykkiNappi);
+			stage.removeChild(siivousNappi);
 			mainClass.naytaPyykkiHuone()
 		}
 		
 		public function SiivousNappiPainettu(event:MouseEvent)
 		{
 			trace("Siivous nappi painettu");
+			tokaKaytavaLoader.unloadAndStop(true);
+			stage.removeChild(oikeaNuoliNappi);
+			stage.removeChild(pyykkiNappi);
+			stage.removeChild(siivousNappi);
+			mainClass.naytaSiivousKaappi()
 		}
 	}
 }

@@ -1,15 +1,20 @@
 package
 {
 	import animaatiot.Keittio;
+	import animaatiot.KylpyHuone;
 	import animaatiot.PyykkiHuone;
+	import animaatiot.SiivousKaappi;
 	
 	import flash.display.MovieClip;
 	import flash.display.Stage;
 	
 	import napit.AloitaNappi;
 	
+	import pelit.HammaspesuPeli;
+	
 	import screens.Aloitus;
 	import screens.EkaKaytava;
+	import screens.HammaspesuPeliOhjeet;
 	import screens.Herays;
 	import screens.TokaKaytava;
 	
@@ -21,6 +26,10 @@ package
 		public var tokaKaytava:TokaKaytava;
 		public var keittio:Keittio;
 		public var pyykkiHuone:PyykkiHuone;
+		public var hammaspesuPeliOhjeet:HammaspesuPeliOhjeet;
+		public var hammaspesuPeli:HammaspesuPeli;
+		public var kylpyHuone:KylpyHuone;
+		public var siivousKaappi:SiivousKaappi;
 		
 		public function Engine()
 		{
@@ -39,6 +48,7 @@ package
 			addChild(aloitus);
 			
 		}
+		
 		public function naytaHerays()
 		{
 			herays = new Herays(stage, this);
@@ -51,6 +61,7 @@ package
 			addChild(herays);
 			
 		}
+		
 		public function naytaEkaKaytava()
 		{
 			ekaKaytava = new EkaKaytava(stage, this);
@@ -97,6 +108,54 @@ package
 				tokaKaytava = null;
 			}
 			addChild(pyykkiHuone);
+		}
+		
+		public function naytaHammaspesuPeliOhjeet()
+		{
+			hammaspesuPeliOhjeet = new HammaspesuPeliOhjeet(stage, this);
+			if (ekaKaytava)
+			{
+				trace("HammaspesuPelin ohjeet")
+				removeChild(ekaKaytava);
+				ekaKaytava = null;
+			}
+			addChild(hammaspesuPeliOhjeet);
+		}
+		
+		public function naytaHammaspesuPeli()
+		{
+			hammaspesuPeli = new HammaspesuPeli();
+			if (hammaspesuPeliOhjeet)
+			{
+				trace("HammaspesuPeli");
+				removeChild(hammaspesuPeliOhjeet);
+				hammaspesuPeliOhjeet = null;
+			}
+			addChild(hammaspesuPeli);
+		}
+		
+		public function naytaKylpyHuone()
+		{
+			kylpyHuone = new KylpyHuone(stage, this);
+			if (ekaKaytava)
+			{
+				trace("Kylpyhuone");
+				removeChild(ekaKaytava);
+				ekaKaytava = null;
+			}
+			addChild(kylpyHuone);
+		}
+		
+		public function naytaSiivousKaappi()
+		{
+			siivousKaappi = new SiivousKaappi(stage, this);
+			if ( tokaKaytava)
+			{
+				trace("Siivouskaappi");
+				removeChild(tokaKaytava);
+				tokaKaytava = null;
+			}
+			addChild(siivousKaappi);
 		}
 	}
 }
