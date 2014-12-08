@@ -124,7 +124,7 @@ package
 		
 		public function naytaHammaspesuPeli()
 		{
-			hammaspesuPeli = new HammaspesuPeli();
+			hammaspesuPeli = new HammaspesuPeli(stage);
 			if (hammaspesuPeliOhjeet)
 			{
 				trace("HammaspesuPeli");

@@ -21,7 +21,7 @@ package animaatiot
 			
 			kylpyHuoneLoader = new Loader();
 			kylpyHuoneUrl = new URLRequest("asdfghjklöä/kylpyhuone.swf");
-			kylpyHuoneTimer = new Timer(12500, 1);
+			kylpyHuoneTimer = new Timer(8500, 1);
 			
 			kylpyHuoneLoader.load(kylpyHuoneUrl);
 			stage.addChild(kylpyHuoneLoader);
